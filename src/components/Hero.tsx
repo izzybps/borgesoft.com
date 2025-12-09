@@ -34,11 +34,11 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{
           animationDelay: "0.3s"
         }}>
-            <Button variant="hero" size="xl">
+            <Button variant="hero" size="xl" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
               View Our Work
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="hero-outline" size="xl">
+            <Button variant="hero-outline" size="xl" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               Get in Touch
             </Button>
           </div>
