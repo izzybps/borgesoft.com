@@ -1,0 +1,30 @@
+<svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hexagon base -->
+  <path
+    d="M30 6L52 18V42L30 54L8 42V18L30 6Z"
+    stroke="#ffffff"
+    stroke-width="2.5"
+    fill="none"
+  />
+  <!-- Inner connecting lines -->
+  <path
+    d="M30 6V22M30 38V54"
+    stroke="#ffffff"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <path
+    d="M8 18L22 26M38 34L52 42"
+    stroke="#ffffff"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <path
+    d="M52 18L38 26M22 34L8 42"
+    stroke="#ffffff"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <!-- Center node -->
+  <circle cx="30" cy="30" r="6" fill="#ffffff" />
+</svg>

@@ -8,6 +8,7 @@ const projects = [
     description: "Data visualization platform for environmental and social indicators in the Amazon region.",
     tags: ["DataViz", "GIS", "ESG"],
     color: "from-teal/20 to-primary/20",
+    url: "https://ipsamazonia.org.br",
   },
   {
     name: "IPS Brazil",
@@ -15,6 +16,7 @@ const projects = [
     description: "Interactive dashboard tracking social progress metrics across Brazilian municipalities.",
     tags: ["Dashboard", "Analytics", "React"],
     color: "from-primary/20 to-teal/20",
+    url: "https://ipsbrasil.org.br",
   },
   {
     name: "SteelMol",
@@ -22,13 +24,7 @@ const projects = [
     description: "Specialized software solution for the steel industry, optimizing processes and data management.",
     tags: ["Enterprise", "Industry", "Automation"],
     color: "from-teal/20 to-primary/20",
-  },
-  {
-    name: "Silvable",
-    category: "Sustainability Platform",
-    description: "Platform connecting forestry data with sustainability metrics for better environmental decisions.",
-    tags: ["Sustainability", "Platform", "Web App"],
-    color: "from-primary/20 to-teal/20",
+    url: "https://steelmol.fly.dev",
   },
 ];
 
@@ -52,9 +48,12 @@ export const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div
+            <a
               key={project.name}
-              className="group relative overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-500"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-500 block"
             >
               {/* Gradient Background */}
               <div className={cn(
@@ -111,7 +110,7 @@ export const Projects = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
