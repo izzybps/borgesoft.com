@@ -27,34 +27,34 @@ export const Logo = ({ className, showText = true, size = "md" }: LogoProps) => 
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+        {/* Hexagon base */}
         <path
-          d="M30 8C18 8 10 18 14 28C18 38 14 42 10 44"
+          d="M30 6L52 18V42L30 54L8 42V18L30 6Z"
           stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
+          strokeWidth="2.5"
           fill="none"
         />
+        {/* Inner connecting lines */}
         <path
-          d="M30 8C42 8 50 18 46 28C42 38 46 42 50 44"
+          d="M30 6V22M30 38V54"
           stroke="currentColor"
-          strokeWidth="3"
+          strokeWidth="2"
           strokeLinecap="round"
-          fill="none"
         />
         <path
-          d="M30 8C30 24 20 30 12 28"
+          d="M8 18L22 26M38 34L52 42"
           stroke="currentColor"
-          strokeWidth="3"
+          strokeWidth="2"
           strokeLinecap="round"
-          fill="none"
         />
         <path
-          d="M30 8C30 24 40 30 48 28"
+          d="M52 18L38 26M22 34L8 42"
           stroke="currentColor"
-          strokeWidth="3"
+          strokeWidth="2"
           strokeLinecap="round"
-          fill="none"
         />
+        {/* Center node */}
+        <circle cx="30" cy="30" r="6" fill="currentColor" />
       </svg>
       {showText && (
         <span className={cn("font-mono font-bold tracking-tight", textSizes[size])}>
