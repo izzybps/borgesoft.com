@@ -1,7 +1,19 @@
+import { useState } from "react";
 import { Button } from "./ui/button";
 import { Mail, MapPin, ArrowRight } from "lucide-react";
 
 export const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Contact from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:contact@borgesoft.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section id="contact" className="py-24 md:py-32 bg-foreground text-background">
       <div className="container mx-auto px-4 md:px-6">
@@ -54,27 +66,36 @@ export const Contact = () => {
               Tell us about your project and we'll get back to you within 24 hours.
             </p>
 
-            <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
                 placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
                 className="w-full px-4 py-3 rounded-lg bg-background/10 border border-background/20 text-background placeholder:text-background/40 focus:outline-none focus:border-primary transition-colors font-mono text-sm"
               />
               <input
                 type="email"
                 placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
                 className="w-full px-4 py-3 rounded-lg bg-background/10 border border-background/20 text-background placeholder:text-background/40 focus:outline-none focus:border-primary transition-colors font-mono text-sm"
               />
               <textarea
                 placeholder="Tell us about your project..."
                 rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
                 className="w-full px-4 py-3 rounded-lg bg-background/10 border border-background/20 text-background placeholder:text-background/40 focus:outline-none focus:border-primary transition-colors font-mono text-sm resize-none"
               />
-              <Button variant="hero" size="lg" className="w-full">
+              <Button type="submit" variant="hero" size="lg" className="w-full">
                 Send Message
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
