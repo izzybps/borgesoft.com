@@ -10,7 +10,7 @@ export const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="font-mono text-sm text-muted-foreground">Sustainable Software from 🇧🇷</span>
+            <span className="font-mono text-sm text-muted-foreground">Sustainable Software from <span className="text-xl">🇧🇷</span></span>
           </div>
 
           {/* Main Heading */}
