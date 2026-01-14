@@ -24,7 +24,7 @@ const projects = [
     description: "Specialized software solution for the steel industry, optimizing processes and data management.",
     tags: ["Enterprise", "Industry", "Automation"],
     color: "from-teal/20 to-primary/20",
-    url: "https://steelmol.fly.dev",
+    url: "https://steelmol.com.br",
   },
 ];
 
